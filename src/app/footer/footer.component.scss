@@ -1,0 +1,118 @@
+footer {
+  background: #5a54ff;
+  padding: 86px 0;
+  position: fixed;
+  bottom: 0;
+  margin-top: calc(100vh - 50px);
+  width: 100%;
+  border-radius: 64px;
+  height: 400px;
+}
+
+.single-box p {
+  color: #fff;
+  line-height: 1.9;
+}
+.single-box {
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+}
+#content {
+  float: right;
+}
+.single-box .card-area i {
+  color: #ffffff;
+  font-size: 20px;
+  margin-right: 10px;
+}
+.single-box ul {
+  list-style: none;
+  padding: 0;
+}
+.single-box ul li a {
+  text-decoration: none;
+  color: #fff;
+  line-height: 2.5;
+  font-weight: 100;
+}
+.block {
+  display: inline-block;
+  width: 23%;
+  margin-right: 1%;
+}
+
+.block:last-child {
+  margin-right: 0;
+}
+
+.single-box h2 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+
+  font-family: "Poppins";
+  font-style: normal;
+}
+#basic-addon2 {
+  background: #001834;
+  margin-right: 10px;
+  border-radius: 10px;
+  color: #fff;
+  width: 50px;
+  border-color: #001834;
+}
+
+.footer-icons a {
+  display: inline-block;
+  margin: 0 10px;
+  color: #ffffff;
+
+  top: 100%;
+}
+.footer-icons {
+  bottom: -63.63%;
+  top: 65%;
+  position: absolute;
+  left: 130px;
+}
+.footer-icons a:hover {
+  color: #ffffff;
+}
+@media (max-width: 767px) {
+  .single-box {
+    margin-bottom: 50px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .single-box {
+    margin-bottom: 50px;
+  }
+}
+h3 {
+  position: absolute;
+  width: 134px;
+  height: 53px;
+
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 52.5px;
+  /* identical to box height */
+
+  left: 150px;
+  color: #ffffff;
+}
+.marge {
+  margin-left: 2em;
+}
+.powered {
+  left: 50%;
+  font-family: "Arial";
+  font-style: normal;
+  font-size: 15px;
+  bottom: 0;
+  transform: translateX(-50%);
+  position: absolute;
+}

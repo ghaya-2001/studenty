@@ -1,0 +1,61 @@
+<footer class="footer">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-3">
+          <!-- Section 1: Logo, Title and Social Icons -->
+          <div class="logo-title">
+            <img src="assets/logoghaya.png" alt="Logo">
+            <h4>NatHub</h4>
+          </div>
+          <div class="social-icons">
+            <i class="bi bi-facebook"></i>
+            <i class="bi bi-instagram"></i>
+            <i class="bi bi-youtube"></i>
+          </div>
+        </div>
+        <div class="col-md-1">
+          <!-- Section 2: Menu -->
+          <h4>Menu</h4>
+          <ul class="menu">
+            <li><a href="#">Home </a></li>
+            <li><a href="#">Works?</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Partners</a></li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <!-- Section 3: Events -->
+          <h4>Events</h4>
+          <div class="row">
+            <div class="col-md-3" *ngFor="let i of [1,2,3,4]">
+              <a href="#">Event {{ i }}</a><br>
+              <a href="#">Event {{ i }}</a><br>
+              <a href="#">Event {{ i }}</a><br>
+              <a href="#">Event {{ i }}</a><br>
+              <a href="#">Event {{ i }}</a><br>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <!-- Section 4: Get in Touch -->
+          <h4>Get in Touch</h4>
+          <form>
+            <input type="email" class="form-control" placeholder="Email">
+          </form>
+          <div class="contact-info">
+            <i class="bi bi-telephone"></i> <span>+1 (555) 123-4567</span><br>
+            <i class="bi bi-envelope"></i> <span>email@example.com</span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 text-right bottom-links">
+          <a href="#">Team</a> |
+          <a href="#">Help</a> |
+          <a href="#">Privacy Policy</a> |
+          <a href="#">Eng</a>
+        </div>
+      </div>
+    </div>
+  </footer>

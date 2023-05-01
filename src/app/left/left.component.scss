@@ -1,0 +1,71 @@
+.left_component{
+    width: 338px;
+    height: 1100px;
+    background: #FDFDFD;
+    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.05);
+    margin-top: 50px;
+    
+    
+    .title{
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        color: #3D3D3D;
+        text-align: center;
+        padding-top: 39px;
+    
+    }
+    .bio{
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        text-align: center;
+        color: #3D3D3D;
+        padding: 30px;
+    }
+    .body_icons{
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        color: #292F33;
+        border-bottom:  1px solid #BDC2FF;
+        
+
+        .icons{
+            justify-content: center;
+            row-gap: 2rem;
+           display: grid;
+           align-content: center;
+           padding-bottom: 41px;
+
+        .all{           
+            background: #FAFAFA;
+            border-radius: 30px;
+            width: 110%;
+            height: 50px;
+            margin: 0 auto;
+            justify-content: center;
+            padding-top: 10px ;
+            padding-left: 20px;
+           
+            span{
+                padding-left: 1rem;
+            }
+
+        }
+        
+
+    }}
+    .univer_logo{
+        padding-left: 10px;
+        .img{
+            width: 90%;
+            padding-top: 90px;
+        }
+    }
+
+}
+
