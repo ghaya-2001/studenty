@@ -13,6 +13,8 @@ import { LeftComponent } from './left/left.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ScoreComponent } from './score/score.component';
 import { CoverComponent } from './cover/cover.component';
+import { AppRoutingModule } from './app-routing.module';
+import { ClassComponent } from './class/class.component';
 
 @NgModule({
   declarations: [
@@ -20,17 +22,19 @@ import { CoverComponent } from './cover/cover.component';
     NavbarComponent,
     UsersComponent,
     PostsComponent,
-    //RightComponent,
+    RightComponent,
     LeftComponent,
     FooterComponent,
     ScoreComponent,
     CoverComponent,
+    ClassComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

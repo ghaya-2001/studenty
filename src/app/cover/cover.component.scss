@@ -1,33 +1,31 @@
 .cover_component {
-  background: #000;
+  
   .cover{
-    .img_cover {
-        position: absolute;
+    
        
-
-      img {
-        width: 70%;
+    .img_cover {
+    
+        width: 100%;
+        max-width: 100%;
         border-radius: 10px;
         align-items: center;
-        padding-left: 370px;
-        padding-top: 15px;
-      }
+        padding-top: 100px;
+      
     }
+
     
     .profile {
-      position: absolute;   
-      padding-left: 30%;   
-      .img_profile {
-        top: 50%;
-        left: 50%;
-        transform: translate(-3%, 40%);
-        img {
-            padding-top: 55px;
-            padding-left: 217px;
-            height: 149px;
-        }
+      margin-top: -60px; 
        
-      }
+       .img_profile{
+        
+        img{
+            width: 20%;
+            margin: 0 auto;
+      display: flex;
+        }
+       }
+     
       
       .user_name{
         
@@ -37,17 +35,18 @@
             font-size: 22px;
             line-height: 42px;
             color: #3D3D3D;
-            padding-top: 40px;
-            transform: translate(35%,57%);
+           text-align: center;
+           padding-top: 10px;
       }
       .nav-list{
             list-style-type: none;
             display: flex;
-            padding-top: 50px;
-            display: fixed;
+            padding-top: 10px;
+           text-align: center;
+            
             
               .nav-item {
-                margin: 0 20px; /* Add margin between navbar items */
+                margin: 0 auto; /* Add margin between navbar items */
                 }
                 
             .nav-item a {

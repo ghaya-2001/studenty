@@ -17,7 +17,7 @@
         <input [type]="showPassword ? 'text' : 'password'" [(ngModel)]="clubData.password" name="password" required>
         <div class="input-group-append">
           <button class="btn" (click)="togglePasswordVisibility()">
-            <i class="fa" [ngClass]="{'fa-eye': showPassword, 'fa-eye-slash': !showPassword}"></i>
+            <i class="fa" [ngClass]="{'fa-eye': showPassword, 'fa-eye-slash': !showPassword} "></i>
           </button>
         </div>
         

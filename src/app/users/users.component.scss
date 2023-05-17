@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
 
 .container {
-  width: 120%;
-  height: 120%; 
+  width: 100%;
+  height: 1200px; 
   background-color: rgba(90, 84, 255, 0.08);
   border: 4px solid #219750;
   display: flex;
@@ -114,6 +114,7 @@ button[type="submit"] {
 
 i {
   color:black;
-  padding-left: 50px;
+  align-items: end;
+  
   
 }

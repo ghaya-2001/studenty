@@ -1,24 +1,10 @@
+
 import { Component, OnInit } from '@angular/core';
+import { PostService, CreatePostResponse , DeletePostResponse} from '../services/post.service';
+import { Post, Comment } from '../models/post.model';
 
-interface Post {
-  userLogo: string;
-  clubName: string;
-  postTime: string;
-  imageUrl: string | ArrayBuffer | null;
-  videoUrl: string | ArrayBuffer | null;
-  content: string;
-  sharesCount: number;
-  comments: Comment[];
-  likesCount: number;
-  liked: boolean;
-  showOptions: boolean;
-}
 
-interface Comment {
-  text: string;
-  showOptions: boolean;
-  editing: boolean;
-}
+
 
 @Component({
   selector: 'app-posts',
@@ -36,10 +22,18 @@ export class PostsComponent implements OnInit {
   clubName: string = 'Example Club';
   postTime: string = 'Just now';
 
-  constructor() { }
+  constructor(private postService: PostService) { }
 
   ngOnInit(): void {
+    this.fetchPosts();
   }
+  fetchPosts(): void {
+    this.postService.getPosts().subscribe((response: any) => {
+      this.posts = response.posts.reverse();
+      console.log(response);
+    });
+  }
+  
 
   openCreateModal(): void {
     this.selectedPost = null;
@@ -91,6 +85,7 @@ export class PostsComponent implements OnInit {
     } else {
       if (this.content.trim() !== "" || this.uploadedImageUrl || this.uploadedVideoUrl) {
         const newPost: Post = {
+     
           userLogo: this.userLogo,
           clubName: this.clubName,
           postTime: this.postTime,
@@ -102,8 +97,19 @@ export class PostsComponent implements OnInit {
           likesCount: 0,
           liked: false,
           showOptions: false,
+          createdAt: new Date().toISOString(),
         };
-        this.posts.unshift(newPost);
+  
+        this.postService.createPost(newPost).subscribe(
+          (response: CreatePostResponse) => {
+            console.log('Post created:', response);
+            this.posts.unshift(response.post);
+          },
+          (error) => {
+            console.error('Failed to create post:', error);
+          }
+        );
+  
         this.content = "";
         this.uploadedImageUrl = null;
         this.uploadedVideoUrl = null;
@@ -168,10 +174,22 @@ export class PostsComponent implements OnInit {
   togglePostOptions(post: Post): void {
     post.showOptions = !post.showOptions;
   }
-
-  deletePost(post: Post): void {
-    this.posts = this.posts.filter((p) => p !== post);
+//-----------------------deletePost----------------//
+deletePost(post: Post): void {
+  if (post._id) {
+    this.postService.deletePost(post._id).subscribe(
+      (response: DeletePostResponse) => {
+        console.log('Post deleted:', response);
+        this.posts = this.posts.filter((p) => p !== post);
+      },
+      (error) => {
+        console.error('Failed to delete post:', error);
+      }
+    );
+  } else {
+    console.error('Post _id is undefined');
   }
+}
   selectedPost: Post | null = null;
   openUpdateModal(post: Post): void {
     this.selectedPost = post;
@@ -188,11 +206,24 @@ export class PostsComponent implements OnInit {
       post.content = this.content;
       post.imageUrl = this.uploadedImageUrl;
       post.videoUrl = this.uploadedVideoUrl;
+      post.likesCount = post.likesCount; // Add this line
+      post.sharesCount = post.sharesCount; // Add this line
+      post.comments = post.comments; // Add this line
+  
+      this.postService.updatePost(post).subscribe(
+        (response) => {
+          console.log('Post updated:', response);
+          this.fetchPosts(); // Refresh the list of posts after updating
+        },
+        (error) => {
+          console.error('Failed to update post:', error);
+        }
+      );
+  
       this.content = "";
       this.uploadedImageUrl = null;
       this.uploadedVideoUrl = null;
       this.closeModel();
     }
   }
-  
 }
